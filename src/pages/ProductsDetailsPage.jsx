@@ -18,6 +18,10 @@ export default function ProductsDetailsPage() {
     navigate(`/products/${parseInt(id) + 1}`);
   };
 
+  const closeButton = () => {
+    navigate(`/products`);
+  };
+
   const fetchProductDetail = () => {
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
@@ -66,7 +70,13 @@ export default function ProductsDetailsPage() {
           </div>
         </div>
       ) : (
-        <div className="d-flex justify-content-between align-items-center gap-4">
+        <div className="d-flex justify-content-between align-items-center gap-4 p-5 position-relative product-info">
+          <div
+            className="close-button position-absolute top-0 start-100 translate-middle fs-3 pe-auto"
+            onClick={closeButton}
+          >
+            <i class="bi bi-x-lg"></i>
+          </div>
           <button
             onClick={prevButton}
             disabled={id <= 1}
