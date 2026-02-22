@@ -1,20 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useBudgetMode } from "../contexts/BudgetContext";
 import ProductsCard from "../components/ProductsCard";
 
 export default function Products() {
-  const { budgetMode } = useBudgetMode(false);
-
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = () => {
-    axios.get("https://fakestoreapi.com/products").then((response) => {
-      setProducts(response.data);
-    });
-  };
-
-  useEffect(fetchProducts, []);
+  const { budgetMode, products } = useBudgetMode(false);
 
   const cheapItems = products.filter((product) => {
     return product.price <= 30;
