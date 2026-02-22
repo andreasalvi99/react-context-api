@@ -40,7 +40,7 @@ export default function ProductsDetailsPage() {
       </div>
     );
 
-  if (!details)
+  if (!details & !isLoading)
     return (
       <>
         <div className="alert alert-danger" role="alert">

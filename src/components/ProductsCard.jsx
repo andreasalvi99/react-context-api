@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-export default function ProductsCard({ key, image, title, price }) {
+export default function ProductsCard({ id, image, title, price }) {
   return (
     <div className="col">
       <div className="card h-100 d-flex flex-column">
         <Link
-          to={"/products/" + key}
+          to={"/products/" + id}
           className="text-decoration-none link-body-emphasis flex-grow-1"
         >
           <figure className="p-2 flex-grow-1 align-self-center img-container">

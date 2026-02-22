@@ -27,6 +27,7 @@ export default function Products() {
       {visibileProducts.map((product) => {
         return (
           <ProductsCard
+            id={product.id}
             key={product.id}
             image={product.image}
             title={product.title}
