@@ -7,7 +7,6 @@ export default function Products() {
   const { budgetMode } = useBudgetMode(false);
 
   const [products, setProducts] = useState([]);
-  const [cheapItems, setCheapItems] = useState([]);
 
   const fetchProducts = () => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
