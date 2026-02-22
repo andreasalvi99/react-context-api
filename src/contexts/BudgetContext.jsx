@@ -5,7 +5,6 @@ const BudgetContext = createContext();
 
 function BudgetModeProvider({ children }) {
   const [budgetMode, setBudgetMode] = useState(false);
-  // const contextValue = { budgetMode, setBudgetMode, products, fetchProducts };
 
   const [products, setProducts] = useState([]);
 
@@ -17,9 +16,22 @@ function BudgetModeProvider({ children }) {
 
   useEffect(fetchProducts, []);
 
+  const cheapItems = products.filter((product) => {
+    return product.price <= 30;
+  });
+
+  const visibileProducts = budgetMode ? cheapItems : products;
+
   return (
     <BudgetContext.Provider
-      value={{ budgetMode, setBudgetMode, products, fetchProducts }}
+      value={{
+        budgetMode,
+        setBudgetMode,
+        products,
+        fetchProducts,
+        cheapItems,
+        visibileProducts,
+      }}
     >
       {children}
     </BudgetContext.Provider>
