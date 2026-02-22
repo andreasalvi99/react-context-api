@@ -75,7 +75,7 @@ export default function ProductsDetailsPage() {
             className="close-button position-absolute top-0 start-100 translate-middle fs-3 pe-auto"
             onClick={closeButton}
           >
-            <i class="bi bi-x-lg"></i>
+            <i className="bi bi-x-lg"></i>
           </div>
           <button
             onClick={prevButton}
