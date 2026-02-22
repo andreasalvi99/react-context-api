@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-NavLink;
-
 export default function Navbar() {
+  const [mode, setMode] = useState(false);
+
   return (
     <nav className="navbar navbar-expand-lg bg-body">
       <div className="container-fluid">
@@ -29,6 +30,23 @@ export default function Navbar() {
               </NavLink>
             </li>
           </ul>
+        </div>
+
+        <div className="form-check form-switch">
+          <input
+            value={mode}
+            onClick={(e) => setMode(e.target.checked)}
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="switchCheckDefault"
+          />
+          <label
+            className="form-check-label text-dark"
+            htmlFor="switchCheckDefault"
+          >
+            Budget Mode
+          </label>
         </div>
       </div>
     </nav>
