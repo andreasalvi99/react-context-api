@@ -14,7 +14,7 @@ function BudgetModeProvider({ children }) {
 }
 
 function useBudgetMode() {
-  return (useContext = BudgetContext);
+  return useContext(BudgetContext);
 }
 
 export { useBudgetMode, BudgetModeProvider };

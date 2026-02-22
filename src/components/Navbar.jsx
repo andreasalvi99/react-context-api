@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useBudgetMode } from "../contexts/BudgetContext";
 
 export default function Navbar() {
+  const { budgetMode, setBudgetMode } = useBudgetMode(false);
+
   const [mode, setMode] = useState(false);
+
+  console.log(budgetMode);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body">
@@ -35,7 +40,12 @@ export default function Navbar() {
         <div className="form-check form-switch">
           <input
             value={mode}
-            onClick={(e) => setMode(e.target.checked)}
+            onClick={(e) => {
+              return (
+                setMode(e.target.checked),
+                setBudgetMode(e.target.checked)
+              );
+            }}
             className="form-check-input"
             type="checkbox"
             role="switch"
