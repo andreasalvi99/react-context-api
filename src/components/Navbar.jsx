@@ -55,7 +55,7 @@ export default function Navbar() {
             className="form-check-label text-dark"
             htmlFor="switchCheckDefault"
           >
-            Budget Mode: {mode === true ? "On" : "Off"}
+            Budget Mode: {mode ? "On" : "Off"}
           </label>
         </div>
       </div>
