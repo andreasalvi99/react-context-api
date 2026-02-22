@@ -17,4 +17,4 @@ function useBudgetMode() {
   return (useContext = BudgetContext);
 }
 
-export { BudgetContext, BudgetModeProvider };
+export { useBudgetMode, BudgetModeProvider };

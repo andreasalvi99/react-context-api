@@ -6,10 +6,12 @@ import Products from "./pages/ProductsPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProductsDetailsPage from "./pages/ProductsDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { BudgetModeProvider } from "./contexts/BudgetContext";
+BudgetModeProvider;
 
 export default function App() {
   return (
-    <>
+    <BudgetModeProvider>
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
@@ -21,6 +23,6 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </BudgetModeProvider>
   );
 }
